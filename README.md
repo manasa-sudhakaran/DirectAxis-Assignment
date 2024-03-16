@@ -14,57 +14,56 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+### About E store
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# E Store Application
 
-### `npm run build`
+This project is a React.js web application that displays a list of products, allowing users to filter, sort, search, and mark products as favorites. It utilizes Redux for state management and Material UI (MUI) for the UI framework. Products are fetched from a static JSON file for simplicity.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Display Products**: Products are displayed in a grid or list view, showing the product name, price, and image.
+- **Filter Products**: Users can filter products based on categories such as electronics, clothing, books, etc., using query parameters.
+- **Sort Products**: Allows sorting of products by price (low to high or high to low) and other criteria.
+- **Pagination/Infinite Scrolling**: Handles large lists of products efficiently.
+- **Search Functionality**: Users can search for products by name or other criteria.
+- **Favorites**: Users can mark products as favorites, which is managed globally using Redux/Context API.
+- **Error Handling & Loading States**: Implements proper error handling and loading indicators for API requests.
+- **Routing**: Uses React Router for navigation and includes a product detail page.
+- **State Management**: Utilizes Redux for state management across the application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Prerequisites
 
-### `npm run eject`
+Before running this project, make sure you have the following installed:
+- Node.js (Recommended version: [Node.js 14.x or newer](https://nodejs.org/))
+- npm (Node Package Manager, comes with Node.js installation)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Setup & Running the Project Locally
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
+   git clone https://github.com/yourusername/product-display-app.git](https://github.com/manasa-sudhakaran/DirectAxis-Assignment.git)https://github.com/manasa-sudhakaran/DirectAxis-Assignment.git
+2. Navigate to the project directory if required:
+   cd projetdirectory
+3. Install dependencies
+   npm install
+4. start the development server
+   npm start
+5.Open your web browser and visit http://localhost:3000 to view the application. (port may be different if already port is in use)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Project Structure
+public/: Contains the static assets, including the product.json file.
+src/
+  api/ApiService.js : Contains API calls and handling
+  app/ : contain the Redux hook and store configuration
+  components/
+    common/ : Reusable components like Header, Footer, 
+    ProductCard.js and ProductGrid.js files
+  features/
+    favorites/favoritesSlice.js : Contain slice for favorite product functionality
+    products/productsSlice.js: Contains slice for product data and operations
+  hooks/ : custom hook for fetching products
+  pages/ : contain page to display home page, favorite page and detail product page
+routes.js : Define the routes here. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  
