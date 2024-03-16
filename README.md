@@ -50,20 +50,20 @@ Before running this project, make sure you have the following installed:
    npm start
 5.Open your web browser and visit http://localhost:3000 to view the application. (port may be different if already port is in use)
 
-## Project Structure
-public/: Contains the static assets, including the product.json file.
-src/
-  api/ApiService.js : Contains API calls and handling
-  app/ : contain the Redux hook and store configuration
-  components/
-    common/ : Reusable components like Header, Footer, 
-    ProductCard.js and ProductGrid.js files
-  features/
-    favorites/favoritesSlice.js : Contain slice for favorite product functionality
-    products/productsSlice.js: Contains slice for product data and operations
-  hooks/ : custom hook for fetching products
-  pages/ : contain page to display home page, favorite page and detail product page
-routes.js : Define the routes here. 
+### Project Structure
+ ## public/: Contains the static assets, including the product.json file.
+ ## src/
+   # api/ApiService.js : Contains API calls and handling
+   # app/ : contain the Redux hook and store configuration
+   # components/
+       # common/ : Reusable components like Header, Footer, 
+       # ProductCard.js and ProductGrid.js files
+   # features/
+       # favorites/favoritesSlice.js : Contain slice for favorite product functionality
+       # products/productsSlice.js: Contains slice for product data and operations
+   # hooks/ : custom hook for fetching products
+   # pages/ : contain page to display home page, favorite page and detail product page
+## routes.js : Define the routes here. 
 
 
   
