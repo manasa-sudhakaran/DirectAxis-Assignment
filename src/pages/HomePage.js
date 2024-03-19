@@ -3,20 +3,26 @@ import useProducts from '../hooks/useProducts';
 import ProductGrid from '../components/ProductGrid';
 import { Box, Button, Menu, MenuItem, TextField, FormControl, InputLabel, Select } from '@mui/material';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
+// import { filterProductsByCategory, sortProductsByPrice, searchProductsByName } from '../api/ApiService';
+// import { useAppSelector } from '../app/hooks';
 
 const HomePage = () => {
   const { products, loading, error } = useProducts();
+  // const products = useAppSelector((state) => state.products.products)
   const [sortOrder, setSortOrder] = useState('lowToHigh');
+  // const [sortOrder, setSortOrder] = useState('asc');
   const [category, setCategory] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleSortChange = (event) => {
     setSortOrder(event.target.value);
+    // setSortOrder(event.target.value === 'lowToHigh' ? 'asc' : 'desc')
   };
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value.toLowerCase());
+    // setCategory('')
   };
 
   const handleCategoryChange = (event) => {
@@ -38,6 +44,17 @@ const HomePage = () => {
       .filter(product => searchQuery ? product.name.toLowerCase().startsWith(searchQuery) : true)
       .sort((a, b) => sortOrder === 'lowToHigh' ? a.price - b.price : b.price - a.price);
   }, [products, sortOrder, category, searchQuery]);
+  // const filteredAndSortedProducts = useMemo(() => {
+  //   let result = products;
+  //   if (category) {
+  //     result = filterProductsByCategory(result, category);
+  //   }
+  //   if (searchQuery) {
+  //     result = searchProductsByName(result, searchQuery);
+  //   }
+  //   result = sortProductsByPrice(result, sortOrder);
+  //   return result;
+  // }, [products, sortOrder, category, searchQuery]);
 
   if (loading) return <p>Loading products...</p>;
   if (error) return <p>Error fetching products: {error}</p>;

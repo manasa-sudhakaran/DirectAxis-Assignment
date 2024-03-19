@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
       }, [isFavorite]);
   
       const handleFav = (e) => {
-          e.stopPropagation(); // Prevent navigation when clicking on the favorite icon
+          e.stopPropagation(); 
           if(addfav) {
               dispatch(removeFavorite(product));
           } else {

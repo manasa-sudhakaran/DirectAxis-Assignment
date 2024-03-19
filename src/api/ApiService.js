@@ -47,5 +47,6 @@ export const sortProductsByPrice = (products, order = 'asc') => {
  */
 export const searchProductsByName = (products, query) => {
   return products.filter(product => product.name.toLowerCase().includes(query.toLowerCase()));
+  // return products.filter(product => product.name.toLowerCase().startsWith(query.toLowerCase()));
 };
 
